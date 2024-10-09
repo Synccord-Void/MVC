@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     this.addRow(formData, nights);
                     this.participants.push({ ...formData, nights });
 
-                    this.updateHiddenField();
+                    this.jsonupdate();
                     this.saveLocal();
                     this.hideModal();
                     this.resetForm();
@@ -66,13 +66,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 newRow.querySelector(".delete-row").addEventListener("click", () => {
                     newRow.remove();
                     this.deleteParticipant(formData);
-                    this.updateHiddenField();
+                    this.jsonupdate();
                     this.saveLocal();
                 });
             }
 
-            updateHiddenField() {
-                // Aktualisiere das versteckte Feld im Formular mit den JSON-Daten
+            jsonupdate() {
                 document.getElementById('participantData').value = JSON.stringify(this.participants);
             }
 
@@ -86,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     this.addRow(participant, participant.nights);
                     this.participants.push(participant);
                 });
-                this.updateHiddenField();
+                this.jsonupdate();
             }
 
             deleteParticipant(formData) {

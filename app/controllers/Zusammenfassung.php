@@ -6,6 +6,6 @@ class Zusammenfassung
 
     public function index()
     {
-       $this->view('zusammenfassung', ['error' => 'No Order Found.']);
+       $this->view('zusammenfassung');
     }
 }

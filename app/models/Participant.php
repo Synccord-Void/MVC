@@ -25,10 +25,10 @@ class Participant
 
     private function calculateNights()
     {
-        $arrivalDate = strtotime($this->arrival);
-        $departureDate = strtotime($this->departure);
-        if ($arrivalDate && $departureDate) {
-            return ceil(($departureDate - $arrivalDate) / (60 * 60 * 24));
+        $arrDate = strtotime($this->arrival);
+        $depDate = strtotime($this->departure);
+        if ($arrDate && $depDate) {
+            return ceil(($depDate - $arrDate) / (60 * 60 * 24));
         }
         return 0;
     }
