@@ -7,5 +7,6 @@ class Zusammenfassung
     public function index()
     {
        $this->view('zusammenfassung');
+       
     }
 }
